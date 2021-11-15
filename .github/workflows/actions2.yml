@@ -1,12 +1,14 @@
 name: New Actions Workflow
 
-on: 
-  repository_dispatch:
-    types: [build]
+on: [push]
+
+  #schedule:
+  #  - cron: "0/5 * * * *"
+  #  - cron: "0/6 * * * *"
   #pull_request:
   #  types: [closed, assigned, opened, reopened]
 
-jobs:  
+jobs:
   run-github-actions:
     runs-on: ubuntu-latest
     steps:
@@ -21,7 +23,7 @@ jobs:
           echo $GITHUB_WORKSPACE
           echo "${{ github.token }}"
       - name: Simple JS Actions
-        id: greet  
+        id: greet
         uses: actions/hello-world-javascript-action@v1
         with:
           who-to-greet: Mukosi
