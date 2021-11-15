@@ -1,6 +1,6 @@
-name: Actions Workflow
+name: New Actions Workflow
 
-on: [pull_request]
+on: [push]
 
   #schedule:
   #  - cron: "0/5 * * * *"
